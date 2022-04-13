@@ -1,9 +1,12 @@
 import './App.css';
 import { useState } from "react";
 import Task from './Task';
+import InputComponent from './InputComponent';
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   const addTask = () => {
     let storedTasks = [...tasks];
@@ -17,7 +20,7 @@ const App = () => {
   return (
     <>
       <h1>To Do</h1>
-      <button onClick={addTask}>Add Task</button>
+      <InputComponent clickHandler={addTask} />
       {tasks.map((task, index) => {
         return <Task key={index} title={task.name} description={task.description} />
       })}
