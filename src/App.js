@@ -8,11 +8,19 @@ const App = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
+  const titleInputHandler = event => {
+    setTitle(event.target.value);
+  }
+
+  const descriptionInputHandler = event => {
+    setDescription(event.target.value);
+  }
+
   const addTask = () => {
     let storedTasks = [...tasks];
     storedTasks.push({
-       name: "Washing",
-       description: "Wash the dishes after dinner"
+       name: title,
+       description: description 
     })
     setTasks(storedTasks);
   }
@@ -20,14 +28,16 @@ const App = () => {
   return (
     <>
       <h1>To Do</h1>
-      <InputComponent clickHandler={addTask} />
+      <InputComponent 
+        clickHandler={addTask} 
+        titleInputHandler={titleInputHandler} 
+        descriptionInputHandler={descriptionInputHandler}
+      />
       {tasks.map((task, index) => {
         return <Task key={index} title={task.name} description={task.description} />
       })}
     </>
   )
 }
-
-
 
 export default App;
