@@ -18,8 +18,8 @@ const App = () => {
     <>
       <h1>To Do</h1>
       <button onClick={addTask}>Add Task</button>
-      {tasks.map(() => {
-        return <Task title="default title" description="default description" />
+      {tasks.map((task, index) => {
+        return <Task key={index} title={task.name} description={task.description} />
       })}
     </>
   )
