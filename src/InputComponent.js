@@ -1,12 +1,10 @@
-const InputComponent = ({ clickHandler, titleInputHandler, descriptionInputHandler }) => {
+const InputComponent = ({ clickHandler, titleInputHandler }) => {
 
     return (
-        <div>
-            <label for="taskTitle">Task Name: </label>
+        <div id="taskInput">
+            <label htmlFor="taskTitle">Task Name</label>
             <input onChange={titleInputHandler} type="text" id="taskTitle" name="taskTitle"></input>
-            <label for="taskDescription">Task Description: </label>
-            <input onChange={descriptionInputHandler} type="text" id="taskDescription" name="taskDescription"></input>
-            <button onClick={() => {clickHandler("task1","taskDescription2")}}>Add Task</button>
+            <button onClick={() => {clickHandler("task1")}}>Add Task</button>
         </div>
     )
 }
