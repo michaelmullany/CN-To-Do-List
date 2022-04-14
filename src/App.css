@@ -33,7 +33,7 @@ label {
     align-items: center;
 }
 
-button {
+.addButton {
     background-color: white;
     color: #331e36;
     border: rgb(51, 30, 54, 0.2) 3px solid;
@@ -43,7 +43,7 @@ button {
     font-size: 16px;   
 }
 
-button:hover {
+.addButton:hover {
     background-color: #ecfee8;
     border: rgb(51, 30, 54, 0.5) 3px solid;
 }
@@ -51,4 +51,33 @@ button:hover {
 .complete {
     text-decoration: line-through;
     color: green;
+}
+
+#taskList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.task {
+    border-radius: 20px;
+    background-color: #ecfee8;
+    box-shadow: 5px 5px #c5d3c1;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.removeButton {
+    font-family: 'Gochi Hand', cursive;
+    font-weight: bold;
+    font-size: 32px;
+    background-color: rgb(0, 0, 0, 0);
+    color: darkred;
+    border: none;
+}
+
+h2 {
+    font-family: 'Gochi Hand', cursive;
+    font-weight: normal;
 }

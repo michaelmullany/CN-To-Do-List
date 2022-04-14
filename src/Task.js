@@ -10,7 +10,7 @@ const Task = props => {
             </div>
             <div className="taskRight">
                 <input type="checkbox" onClick={() => props.checkHandler(props.index)}></input>
-                <button onClick={() => {props.removeHandler(props.index)}}>X</button>
+                <button class="button removeButton" onClick={() => {props.removeHandler(props.index)}}>X</button>
             </div>
         </div>
     )
