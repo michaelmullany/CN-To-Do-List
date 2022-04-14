@@ -17,6 +17,12 @@ const App = () => {
     setTasks(storedTasks);
   }
 
+  const removeTask = index => {
+    let storedTasks = [...tasks];
+    storedTasks.splice(index, 1);
+    setTasks(storedTasks);
+  }
+
   return (
     <>
       <h1>To Do</h1>
@@ -24,8 +30,8 @@ const App = () => {
         clickHandler={addTask} 
         titleInputHandler={titleInputHandler} 
       />
-      {tasks.map((task, index) => {
-        return <Task key={index} title={title} />
+      {tasks.map((title, index) => {
+        return <Task key={index} title={title} removeHandler={removeTask} index={index} />
       })}
     </>
   )

@@ -6,7 +6,7 @@ const Task = props => {
             </div>
             <div className="taskRight">
                 <input type="checkbox"></input>
-                <button>X</button>
+                <button onClick={() => {props.removeHandler(props.index)}}>X</button>
             </div>
         </div>
     )
