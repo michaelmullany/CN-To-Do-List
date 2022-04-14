@@ -13,7 +13,9 @@ const App = () => {
 
   const addTask = () => {
     let storedTasks = [...tasks];
-    storedTasks.push({name: input, complete: false})
+    if (input !== "") {
+      storedTasks.push({name: input, complete: false})
+    }
     setTasks(storedTasks);
     setInput("");
   }
