@@ -59,6 +59,7 @@ label {
 #taskList {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .task {
@@ -82,7 +83,16 @@ label {
     border: none;
 }
 
+.removeButton:hover {
+    color: red;
+}
+
 h2 {
     font-family: 'Gochi Hand', cursive;
     font-weight: normal;
+}
+
+h2:hover {
+    color: green;
+    cursor: default;
 }
