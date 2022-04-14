@@ -1,14 +1,63 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
-// test('renders learn react link', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
+describe("test the add button", () => {
+  test("one button available on load", () => {
+    render(<App />);
+    let element = screen.getAllByRole("button");
+    expect(element.length).not.toBe(0);
+  });
+  
+  test("one button available on load", () => {
+    render(<App />);
+    let element = screen.getAllByRole("button");
+    expect(element.length).toBe(1);
+  });
+  
+  
+  test("one button available on load", () => {
+    render(<App />);
+    let element = screen.getAllByRole("button");
+    expect(element.length).not.toBe(2);
+  });
+})
 
-test("to do list header is rendered", () => {
-  render(<App />);
-  let element = screen.getByText("To Do");
-  expect(element).toBeInTheDocument();
+describe("input field", () => {
+  test("there is an input field in the document", () => {
+    render(<App />);
+    const input = screen.getByRole("textbox");
+    expect(input).toBeInTheDocument();
+  })
+})
+
+describe("test add task functionality", () => {
+  test("more than zero headings initially", () => {
+    render(<App />);
+    let element = screen.getAllByRole("heading");
+    expect(element.length).not.toBe(0);
+  })
+  
+  test("one heading initially", () => {
+    render(<App />);
+    let element = screen.getAllByRole("heading");
+    expect(element.length).toBe(1);
+  })
+  
+  test("clicking the add button while the input is empty does not add a task", () => {
+    render(<App />);
+    const addButton = screen.getByText("Add Task");
+    fireEvent.click(addButton);
+    let element = screen.getAllByRole("heading");
+    expect(element.length).toBe(1);
+  })
+  
+  test("clicking the add button while the input has a value does add a task", () => {
+    render(<App />);
+    const input = screen.getByRole("textbox");
+    fireEvent.change(input, {target: {value: "Task"}})
+    const addButton = screen.getByText("Add Task");
+    fireEvent.click(addButton);
+    let element = screen.getAllByRole("heading");
+    expect(element.length).toBe(2);
+  })
 })
