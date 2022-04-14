@@ -2,10 +2,14 @@ const Task = props => {
     return (
         <div className="task">
             <div className="taskLeft">
-                <h2>{props.name}</h2>
+                {props.complete ? 
+                    <h2 className="complete">{props.name}</h2>
+                    :
+                    <h2>{props.name}</h2>
+                }
             </div>
             <div className="taskRight">
-                <input type="checkbox"></input>
+                <input type="checkbox" onClick={() => props.checkHandler(props.index)}></input>
                 <button onClick={() => {props.removeHandler(props.index)}}>X</button>
             </div>
         </div>
