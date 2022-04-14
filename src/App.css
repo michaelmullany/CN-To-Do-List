@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
 
+body {
+    background: rgb(194,239,235);
+}
+
 #inputSection {
-    background: rgb(110,164,191);
     background: linear-gradient(180deg, rgba(110,164,191,1) 0%, rgba(194,239,235,1) 100%);
     color: white;
     display: flex;
@@ -59,10 +62,12 @@ label {
 }
 
 .task {
+    color: #331e36;
     border-radius: 20px;
     background-color: #ecfee8;
+    border: #331e36 2px solid;
     box-shadow: 5px 5px #c5d3c1;
-    padding: 10px;
+    padding: 0px 10px;
     margin: 10px;
     display: flex;
     align-items: center;
