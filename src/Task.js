@@ -9,7 +9,7 @@ const Task = props => {
                 }
             </div>
             <div className="taskRight">
-                <button class="button removeButton" onClick={() => {props.removeHandler(props.index)}}>X</button>
+                <button className="button removeButton" onClick={() => {props.removeHandler(props.index)}}>X</button>
             </div>
         </div>
     )
