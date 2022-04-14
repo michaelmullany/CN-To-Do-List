@@ -30,16 +30,17 @@ const App = () => {
   }
 
   return (
-    <>
-      <h1>To Do</h1>
-      <InputComponent 
-        clickHandler={addTask} 
-        inputHandler={inputHandler} 
-      />
-      {tasks.map((task, index) => {
-        return <Task key={index} name={task.name} complete={task.complete} removeHandler={removeTask} checkHandler={toggleComplete} index={index} />
-      })}
-    </>
+    <main>
+      <div id="inputSection">
+        <h1>To Do List</h1>
+        <InputComponent clickHandler={addTask} inputHandler={inputHandler} />
+      </div>
+      <div id="taskList">
+        {tasks.map((task, index) => {
+          return <Task key={index} name={task.name} complete={task.complete} removeHandler={removeTask} checkHandler={toggleComplete} index={index} />
+        })}
+      </div>
+    </main>
   )
 }
 
