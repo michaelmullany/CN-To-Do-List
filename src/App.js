@@ -15,6 +15,7 @@ const App = () => {
     let storedTasks = [...tasks];
     storedTasks.push({name: input, complete: false})
     setTasks(storedTasks);
+    setInput("");
   }
 
   const removeTask = index => {
@@ -33,7 +34,7 @@ const App = () => {
     <main>
       <div id="inputSection">
         <h1>To Do List</h1>
-        <InputComponent clickHandler={addTask} inputHandler={inputHandler} />
+        <InputComponent value={input} clickHandler={addTask} inputHandler={inputHandler} />
       </div>
       <div id="taskList">
         {tasks.map((task, index) => {
