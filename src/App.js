@@ -5,15 +5,15 @@ import InputComponent from './InputComponent';
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
-  const [title, setTitle] = useState("");
+  const [input, setInput] = useState("");
 
-  const titleInputHandler = event => {
-    setTitle(event.target.value);
+  const inputHandler = event => {
+    setInput(event.target.value);
   }
 
   const addTask = () => {
     let storedTasks = [...tasks];
-    storedTasks.push(title)
+    storedTasks.push(input)
     setTasks(storedTasks);
   }
 
@@ -28,10 +28,10 @@ const App = () => {
       <h1>To Do</h1>
       <InputComponent 
         clickHandler={addTask} 
-        titleInputHandler={titleInputHandler} 
+        inputHandler={inputHandler} 
       />
-      {tasks.map((title, index) => {
-        return <Task key={index} title={title} removeHandler={removeTask} index={index} />
+      {tasks.map((input, index) => {
+        return <Task key={index} name={input} removeHandler={removeTask} index={index} />
       })}
     </>
   )
